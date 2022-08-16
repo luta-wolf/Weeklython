@@ -1,0 +1,14 @@
+stages:
+  - product
+
+production:
+  stage: product
+  when: on_success
+  tags:
+    - tag
+  script:
+    - chmod +x start.sh
+    - ./start.sh
+  after_script:
+    - chmod +x telegram.sh
+    - ./telegram.sh CD 0

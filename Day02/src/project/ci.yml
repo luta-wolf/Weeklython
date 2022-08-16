@@ -1,0 +1,31 @@
+stages:
+  - build
+  - test
+
+building:
+  stage: build
+  tags:
+    - tag
+  script:
+    - cd ../../
+    - python3 -m venv env
+    - source env/bin/activate
+    - pip install -r requariments.txt
+    - python src/project/Bot.py
+  after_script:
+    - chmod +x telegram.sh
+    - ./telegram.sh CI 0
+
+testing:
+  stage: test
+  when: on_success
+  tags:
+    - tag
+  script:
+    - python src/project/test1.py
+    - python src/project/test2.py
+    - python src/project/test3.py
+    - python src/project/test4.py
+  after_script:
+    - chmod +x telegram.sh
+    - ./telegram.sh CI 0
