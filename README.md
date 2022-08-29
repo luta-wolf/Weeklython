@@ -4,3 +4,6 @@
 
 
 Рисовать дизайн бота здесь https://www.figma.com/
+
+
+Писать код всем вместе здеь https://replit.com/onboarding/action

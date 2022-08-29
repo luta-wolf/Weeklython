@@ -1,0 +1,42 @@
+{% extends "bot/base.html" %}
+{% load static %}
+{% block content %}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th>#</th>
+          <th>Объект</th>
+          <th>кампус</th>
+          <th>Статус</th>
+          <th>Пользователь</th>
+          <th>с</th>
+          <th>по</th>
+          <th>дата бронирования</th>
+          <th>Удалить</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if booking_list %}
+            {% for booking in booking_list %}
+                <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.school_object_id__object_name }}</td>
+                <td>{{ booking.school_object_id__object_campus_id__name }}</td>
+                <td>{{ booking.status_id__name }}</td>
+                <td>{{ booking.user_id__login }}</td>
+                <td>{{ booking.start }}</td>
+                <td>{{ booking.end }}</td>
+                <td>{{ booking.book_date }}</td>
+                <td>X</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <p>No booking</p>
+        {% endif %}
+      </tbody>
+</table>
+
+</main>
+{% endblock %}
