@@ -7,3 +7,6 @@
 
 
 Писать код всем вместе здеь https://replit.com/onboarding/action
+
+
+Презентацию того, что получилось можно посмотреть [здесь](https://github.com/luta-wolf/Weeklython/blob/main/src/presentation/presentation.pdf)
